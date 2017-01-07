@@ -8,11 +8,13 @@ function replaceUserInfo(userInfo) {
     }
 }
 
+
 function clearUserInfo() {
     return {type: types.CLEAR_USER_INFO}
 }
 
 function fetchUserInfo() {
+
     return dispatch => {
         utils.ajax({url: '/api/user/getUserInfo'}).then(res => {
             dispatch(replaceUserInfo(res))
@@ -20,8 +22,27 @@ function fetchUserInfo() {
     }
 }
 
+function replaceInsurnce(info) {
+    return { 
+        type:types.REPLACE_INSURANCE_INFO,
+        info
+    }
+}
+
+function fetchInsurance() {
+     
+    return dispatch => { 
+        utils.ajax({url: '/api/insurance/getInfo'}).then(res => {
+            dispatch(replaceInsurnce(res))
+        })
+    }
+}
+
+
 export default {
     replaceUserInfo,
     fetchUserInfo,
-    clearUserInfo
+    clearUserInfo,
+    fetchInsurance,
+    replaceInsurnce
 }

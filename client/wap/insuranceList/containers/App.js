@@ -1,25 +1,46 @@
-import React, {Component} from 'react'
-// import SectionMain from '../components/SectionMain'
-import styles from '../sass/App'
+import React, {Children, Component, cloneElement} from 'react'
+import actions from '../../../common/actions'
+import styles from '../sass/App' 
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
 
 class App extends Component {
     constructor() {
         super()
     }
-    componentDidMount(){
-        const {actions} = this.props 
-        actions.fetchUserInfo()
+  
+    
+    componentDidMount() {
+        const {actions} = this.props
+
+        actions.fetchInsurance()
     }
 
     render() {
-       const {userInfo} = this.props
+        
+        const {insurance} = this.props
+       
 
         return (
-            <div  className={styles.app}>
-                {userInfo && JSON.stringify(userInfo)}
+            <div  className={styles.app}> 
+                <p>{insurance && JSON.stringify(insurance)}</p> 
             </div>
         )
     }
 }
 
-export default App
+
+function mapStateToProps(state) {
+    
+    return {insurance: state.insuranceInfo}
+}
+
+function mapDispatchToProps(dispatch) {
+    return {actions: bindActionCreators(actions, dispatch)}
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App)
