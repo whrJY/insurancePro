@@ -1,3 +1,4 @@
+import body from 'koa-bodyParser'
 async function getInfo(ctx) {
     ctx.body = {
         name: 'insurance',
@@ -5,5 +6,5 @@ async function getInfo(ctx) {
         age: 20
     }
 }
-
+body()
 export default {getInfo}
