@@ -14,7 +14,7 @@ class App extends Component {
     componentDidMount() {
         const {actions} = this.props
 
-        actions.fetchInsurance()
+        actions.fetchInsurance({name:'qiuye',age:'28'})
     }
 
     render() {
