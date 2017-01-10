@@ -32,7 +32,7 @@ function replaceInsurnce(info) {
 function fetchInsurance(datas) {
      
     return dispatch => { 
-        utils.ajax({url: '/api/insurance/getInfo',data:datas}).then(res => {
+        utils.ajax({url: '/api/insuranceApp/getInfo',data:datas}).then(res => {
             dispatch(replaceInsurnce(res))
         })
     }
