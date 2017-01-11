@@ -39,10 +39,13 @@ function fetchInsurance(datas) {
 }
 
 
+
+
+
 export default {
     replaceUserInfo,
     fetchUserInfo,
     clearUserInfo,
     fetchInsurance,
-    replaceInsurnce
+    replaceInsurnce, 
 }
