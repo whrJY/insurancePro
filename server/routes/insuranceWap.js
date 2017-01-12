@@ -9,7 +9,7 @@ router.post('/getInfo', async (ctx, next) => {
  
     appInfo.getAppInfo(ctx) 
   
-    return next();
+     console.log(12)
     
 
 });
