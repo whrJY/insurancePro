@@ -5,14 +5,7 @@ import appInfo from '../controllers/appInfo'
 const router = new Router({prefix: '/insuranceApp'})
 
 //app 请求响应
-router.post('/getInfo', async (ctx, next) => {
+router.post('/getInfo', appInfo.getAppInfo,appInfo.getInfo);
  
-    appInfo.getAppInfo(ctx) 
-  
-     console.log(12)
-    
-
-});
-
 
 export default router

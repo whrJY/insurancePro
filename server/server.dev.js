@@ -63,5 +63,8 @@ app.use(convert(devMiddleware(compiler, {
     noInfo: true,
     publicPath: config.output.publicPath
 })))
+app.on('error', function(err,ctx){
+    console.log(err);
+});
 app.use(convert(hotMiddleware(compiler)))
 app.listen(port)
