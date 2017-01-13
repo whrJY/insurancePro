@@ -7,12 +7,12 @@ let request = require("co-request");
 //import request from 'superagent'
 var _data;
 async function getAppInfo(ctx,next){
- 
+ console.log(ctx.request.body)
 	co(function* () {  
 	  // You can also pass options object, see http://github.com/mikeal/request docs   
 	    let result = yield request('http://192.168.1.23:7001/admin/wap/wap_product!getProductColumnInfo.action?GNAME=byx_wap&GPARSSWORD=byx20161215010101&jsonRequest={USER: "byx",REQUESTTYPE: "ZLJRT1013",PARAMETERS: {}}');   
-	    let response = result;  
-	    _data =  result.body;  
+	    let res = result.body;  
+	    _data = eval('(' + res + ')')
 	   
   		ctx.body = _data
 	    
