@@ -109,3 +109,8 @@ It happens also when run in development mode. This is caused by when you update 
 ## License
 
 [MIT](https://github.com/chikara-chan/react-isomorphic-boilerplate/blob/master/LICENSE)
+
+
+杀进程
+sudo lsof -i :3000
+sudo kill -9 pidNum
