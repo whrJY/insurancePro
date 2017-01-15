@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import DevTools from './DevTools'
 import Common from './Common'
+import App from '../../wap/insuranceList/containers/App'
 
 class Root extends Component {
     constructor() {
@@ -9,6 +10,7 @@ class Root extends Component {
     }
 
     componentDidMount() {
+
         this.setState({isMounted: true})
         console.log('Redux Devtools is now available. Press key "ctrl-h" to toggleVisibility. Press key "ctrl-w" to changePosition.')
     }
@@ -19,7 +21,7 @@ class Root extends Component {
 
         return (
             <div>
-                <Common>{children}</Common>
+                <App>{children}</App>
                 {isMounted && <DevTools/>}
             </div>
         )

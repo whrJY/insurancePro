@@ -11,6 +11,7 @@ async function clientRoute(ctx, next) {
     let _renderProps
 
     match({routes, location: ctx.url}, (error, redirectLocation, renderProps) => {
+        
         _renderProps = renderProps
     })
 

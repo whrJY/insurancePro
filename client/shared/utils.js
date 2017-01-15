@@ -5,6 +5,7 @@ import request from 'superagent'
  * @return {Promise}
  */
 function ajax(options) {
+ 
     const defaults = {
         type: 'post',
         url: null,
@@ -93,7 +94,7 @@ function getUrlParams() {
 
     return ret
 }
-
+ 
 export default {
     ajax,
     formatDate,

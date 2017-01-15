@@ -6,13 +6,18 @@ class App extends Component {
     constructor() {
         super()
     }
+    componentDidMount() {
+        const {actions} = this.props
+
+        actions.fetchUserInfo()
+    }
 
     render() {
-        const {actions} = this.props
+        const {userInfo} = this.props
 
         return (
             <div className={styles.app}>
-                <SectionMain actions={actions}></SectionMain>
+                 {userInfo && JSON.stringify(userInfo)}
             </div>
         )
     }
