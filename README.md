@@ -114,3 +114,11 @@ It happens also when run in development mode. This is caused by when you update 
 杀进程
 sudo lsof -i :3000
 sudo kill -9 pidNum
+
+smartgit 操作 merge
+
+先push 自己的分之
+再切到主分支 pull代码
+右键自己的分之 merge 
+merge to working tree
+commit
