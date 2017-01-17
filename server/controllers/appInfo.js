@@ -1,26 +1,33 @@
  
 let co = require("co");  
 let request = require("co-request");  
+import actionUrl from '../../client/shared/actionUrl'  
+import searchAppUser from '../../client/shared/searchAppUser'
  
 var _data;
 async function getAppInfo(ctx,next){
+    searchAppUser.getConnect()
 // 请求参数 ctx.request.body
-	 
+	console.log(ctx.request.body) 
+
+    
+
+
+
+
+    var url = actionUrl.getActionUrl('wap/wap_product!getProductInfo.action','"REQUESTTYPE": "ZLJRT0109","PARAMETERS": {}')
+   
   await co(function* () {  
-        let result = yield request('https://www.biyouxin.com/user/getUserChannel.html');   
+        let result = yield request(url);   
         let res = result.body;  
         _data = eval('(' + res + ')')
       
     }).catch(function (err) {  
-        console.err(err);  
+        return err;  
     }); 
   
     await next()
-     
- 
-
-//  'http://192.168.1.23:7001/admin/wap/wap_product!getProductColumnInfo.action?GNAME=byx_wap&GPARSSWORD=byx20161215010101&jsonRequest={USER: "byx",REQUESTTYPE: "ZLJRT1013",PARAMETERS: {}}' 
- 
+  
   
 }
 function getInfo(ctx){ 
