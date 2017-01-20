@@ -7,7 +7,7 @@ function getConnect(){
 	 
 
 	 db.driver.execQuery("SELECT * FROM rd_token_store where id = 35", function (err, data) {
-	 	console.log(data)
+	 	//console.log(data)
 	 })
 
 

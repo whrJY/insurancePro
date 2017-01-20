@@ -38,10 +38,7 @@ function fetchInsurance(datas) {
     }
 }
 
-
-
-
-
+ 
 export default {
     replaceUserInfo,
     fetchUserInfo,

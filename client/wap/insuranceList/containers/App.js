@@ -9,23 +9,25 @@ class App extends Component {
     constructor() {
         super()
     }
-  
-    
+   
     componentDidMount() {
-        const {actions} = this.props
-
-        actions.fetchInsurance({name:'qiuye',age:'28'}) 
-        
+        const {actions} = this.props 
+        actions.fetchInsurance({name:'qiuye',age:'28'})  
     }
 
     render() {
         
-        const {insurance} = this.props
-       
+        const {insurance} = this.props 
 
         return (
             <div  className={styles.app}> 
                 <p>{insurance && JSON.stringify(insurance)}</p> 
+                <h1>File Upload</h1>
+                <p>Try uploading multiple files at a time.</p>
+                <form action="/api/uploadFile" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" multiple />
+                    <input type="submit" value="Upload"/>
+                </form>
             </div>
         )
     }

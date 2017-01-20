@@ -8,7 +8,7 @@ var _data;
 async function getAppInfo(ctx,next){
     searchAppUser.getConnect()
 // 请求参数 ctx.request.body
-	console.log(ctx.request.body) 
+	//console.log(ctx.request.type) 
 
     
 
